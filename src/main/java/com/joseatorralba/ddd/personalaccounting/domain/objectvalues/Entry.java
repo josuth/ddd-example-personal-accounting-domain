@@ -13,5 +13,6 @@ public class Entry {
 	String description;
 	double amount;
 	Category category;
+	Account account;
 	
 }
