@@ -1,6 +1,14 @@
 package com.joseatorralba.ddd.personalaccounting.domain.objectvalues;
 
 public enum Category {
+	
+	// INCOMES
+	SALARY,
+	RENTS,
+	TAX_REFUNDS,
+	PRICES,
+	
+	// EXPENSES
 	MARKET,
 	HOUSE,
 	CAR,
@@ -12,4 +20,5 @@ public enum Category {
 	LEISURE,
 	HOLLIDAYS,
 	GIFTS
+	
 }
