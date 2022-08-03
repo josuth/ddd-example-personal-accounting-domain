@@ -9,6 +9,7 @@ import com.joseatorralba.ddd.personalaccounting.domain.exceptions.AccountDoesNot
 import com.joseatorralba.ddd.personalaccounting.domain.objectvalues.Account;
 import com.joseatorralba.ddd.personalaccounting.domain.objectvalues.Category;
 import com.joseatorralba.ddd.personalaccounting.domain.objectvalues.Entry;
+import com.joseatorralba.ddd.personalaccounting.domain.objectvalues.EntryBudgetType;
 
 public class CashFlow {
 
@@ -48,6 +49,13 @@ public class CashFlow {
 			.mapToDouble(Entry::getAmount)
 			.sum();
 	}
+	
+	public Double getBalance(EntryBudgetType type) {
+		return entries.stream()
+				.filter(e -> e.getCategory().getType().equals(type))
+				.mapToDouble(Entry::getAmount)
+				.sum();
+	}
 
 	public Double getBalance(String accountNumber) throws AccountDoesNotExistException {
 		Account account = getAccountInfo(accountNumber);
@@ -65,5 +73,5 @@ public class CashFlow {
 		}
 		throw new AccountDoesNotExistException(accountNumber);
 	}
-	
+
 }

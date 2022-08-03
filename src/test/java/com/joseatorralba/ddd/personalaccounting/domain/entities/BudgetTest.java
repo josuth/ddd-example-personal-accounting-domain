@@ -49,5 +49,14 @@ public class BudgetTest {
 		
 		assertEquals(700, budget.getTotalExpenses());
 	}
+	
+	@Test
+	public void givenBudget_whenGetCategoryAmount_thenAmountReturned_test()	{
+		budget.addEntry(SALARY, 1000, INCOME);
+		budget.addEntry(MARKET, 700, EXPENSE);
+		budget.addEntry(RENTS, 500, INCOME);
+		
+		assertEquals(700, budget.getAmount(MARKET));
+	}
 
 }

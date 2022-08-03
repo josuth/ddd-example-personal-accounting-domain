@@ -40,9 +40,18 @@ public class Budget {
 		return getTotalBalanceOfType(EntryBudgetType.EXPENSE);
 	}
 	
+	
+	
 	private double getTotalBalanceOfType(EntryBudgetType type) {
 		return this.entries.stream()
 				.filter(e -> type.equals(e.getType()))
+				.mapToDouble(EntryBudget::getAmount)
+				.sum();
+	}
+
+	public double getAmount(Category category) {
+		return this.entries.stream()
+				.filter(e -> category.equals(e.getCategory()))
 				.mapToDouble(EntryBudget::getAmount)
 				.sum();
 	}
