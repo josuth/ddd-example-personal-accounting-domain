@@ -1,6 +1,6 @@
 package com.joseatorralba.ddd.personalaccounting.domain.objectvalues;
 
-public enum EntryBudgetType {
+public enum EntryType {
 	INCOME,
 	EXPENSE
 }

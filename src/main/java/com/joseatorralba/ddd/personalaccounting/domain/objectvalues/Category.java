@@ -1,7 +1,7 @@
 package com.joseatorralba.ddd.personalaccounting.domain.objectvalues;
 
-import static com.joseatorralba.ddd.personalaccounting.domain.objectvalues.EntryBudgetType.EXPENSE;
-import static com.joseatorralba.ddd.personalaccounting.domain.objectvalues.EntryBudgetType.INCOME;
+import static com.joseatorralba.ddd.personalaccounting.domain.objectvalues.EntryType.EXPENSE;
+import static com.joseatorralba.ddd.personalaccounting.domain.objectvalues.EntryType.INCOME;
 
 import lombok.Getter;
 
@@ -27,9 +27,9 @@ public enum Category {
 	GIFTS(EXPENSE);
 	
 	@Getter
-	private EntryBudgetType type;
+	private EntryType type;
 	
-	private Category(EntryBudgetType type)	{
+	private Category(EntryType type)	{
 		this.type = type;
 	}
 	

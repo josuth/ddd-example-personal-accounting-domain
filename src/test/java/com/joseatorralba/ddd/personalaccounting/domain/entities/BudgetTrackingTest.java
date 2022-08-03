@@ -1,8 +1,8 @@
 package com.joseatorralba.ddd.personalaccounting.domain.entities;
 
 import static com.joseatorralba.ddd.personalaccounting.domain.objectvalues.Category.MARKET;
-import static com.joseatorralba.ddd.personalaccounting.domain.objectvalues.EntryBudgetType.EXPENSE;
-import static com.joseatorralba.ddd.personalaccounting.domain.objectvalues.EntryBudgetType.INCOME;
+import static com.joseatorralba.ddd.personalaccounting.domain.objectvalues.EntryType.EXPENSE;
+import static com.joseatorralba.ddd.personalaccounting.domain.objectvalues.EntryType.INCOME;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
@@ -11,6 +11,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import com.joseatorralba.ddd.personalaccounting.domain.domainservices.BudgetTracking;
 
 @ExtendWith(MockitoExtension.class)
 public class BudgetTrackingTest {

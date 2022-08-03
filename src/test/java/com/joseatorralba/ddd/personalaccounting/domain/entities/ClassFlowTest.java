@@ -16,7 +16,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import com.joseatorralba.ddd.personalaccounting.domain.exceptions.AccountDoesNotExistException;
 import com.joseatorralba.ddd.personalaccounting.domain.objectvalues.Account;
 import com.joseatorralba.ddd.personalaccounting.domain.objectvalues.Category;
-import com.joseatorralba.ddd.personalaccounting.domain.objectvalues.EntryBudgetType;
+import com.joseatorralba.ddd.personalaccounting.domain.objectvalues.EntryType;
 
 @ExtendWith(MockitoExtension.class)
 public class ClassFlowTest {
@@ -53,8 +53,8 @@ public class ClassFlowTest {
 		assertEquals(-10.5, cashFlow.getBalance(Category.MARKET));
 		assertEquals(-5.5, cashFlow.getBalance(Category.GIFTS));
 		
-		assertEquals(-16.0, cashFlow.getBalance(EntryBudgetType.EXPENSE));
-		assertEquals(0.0, cashFlow.getBalance(EntryBudgetType.INCOME));
+		assertEquals(-16.0, cashFlow.getBalance(EntryType.EXPENSE));
+		assertEquals(0.0, cashFlow.getBalance(EntryType.INCOME));
 	}
 	
 	@Test

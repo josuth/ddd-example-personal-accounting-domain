@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.joseatorralba.ddd.personalaccounting.domain.objectvalues.Category;
 import com.joseatorralba.ddd.personalaccounting.domain.objectvalues.EntryBudget;
-import com.joseatorralba.ddd.personalaccounting.domain.objectvalues.EntryBudgetType;
+import com.joseatorralba.ddd.personalaccounting.domain.objectvalues.EntryType;
 
 public class Budget {
 
@@ -18,7 +18,7 @@ public class Budget {
 		this.entries = new ArrayList<>();
 	}
 
-	public void addEntry(Category category, double amount, EntryBudgetType type) {
+	public void addEntry(Category category, double amount, EntryType type) {
 		this.entries.add(EntryBudget.builder()
 				.category(category)
 				.amount(amount)
@@ -33,16 +33,16 @@ public class Budget {
 	}
 
 	public double getTotalIncomes() {
-		return getTotalBalanceOfType(EntryBudgetType.INCOME);
+		return getTotalBalanceOfType(EntryType.INCOME);
 	}
 
 	public double getTotalExpenses() {
-		return getTotalBalanceOfType(EntryBudgetType.EXPENSE);
+		return getTotalBalanceOfType(EntryType.EXPENSE);
 	}
 	
 	
 	
-	private double getTotalBalanceOfType(EntryBudgetType type) {
+	private double getTotalBalanceOfType(EntryType type) {
 		return this.entries.stream()
 				.filter(e -> type.equals(e.getType()))
 				.mapToDouble(EntryBudget::getAmount)

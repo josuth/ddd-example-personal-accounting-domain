@@ -9,7 +9,7 @@ import com.joseatorralba.ddd.personalaccounting.domain.exceptions.AccountDoesNot
 import com.joseatorralba.ddd.personalaccounting.domain.objectvalues.Account;
 import com.joseatorralba.ddd.personalaccounting.domain.objectvalues.Category;
 import com.joseatorralba.ddd.personalaccounting.domain.objectvalues.Entry;
-import com.joseatorralba.ddd.personalaccounting.domain.objectvalues.EntryBudgetType;
+import com.joseatorralba.ddd.personalaccounting.domain.objectvalues.EntryType;
 
 public class CashFlow {
 
@@ -50,7 +50,7 @@ public class CashFlow {
 			.sum();
 	}
 	
-	public Double getBalance(EntryBudgetType type) {
+	public Double getBalance(EntryType type) {
 		return entries.stream()
 				.filter(e -> e.getCategory().getType().equals(type))
 				.mapToDouble(Entry::getAmount)

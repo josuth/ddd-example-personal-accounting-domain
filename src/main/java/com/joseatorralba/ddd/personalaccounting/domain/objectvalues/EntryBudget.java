@@ -11,6 +11,6 @@ public class EntryBudget {
 	
 	double amount;
 	
-	EntryBudgetType type;
+	EntryType type;
 	
 }

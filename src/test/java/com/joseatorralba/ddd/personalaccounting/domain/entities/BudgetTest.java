@@ -3,8 +3,8 @@ package com.joseatorralba.ddd.personalaccounting.domain.entities;
 import static com.joseatorralba.ddd.personalaccounting.domain.objectvalues.Category.MARKET;
 import static com.joseatorralba.ddd.personalaccounting.domain.objectvalues.Category.RENTS;
 import static com.joseatorralba.ddd.personalaccounting.domain.objectvalues.Category.SALARY;
-import static com.joseatorralba.ddd.personalaccounting.domain.objectvalues.EntryBudgetType.EXPENSE;
-import static com.joseatorralba.ddd.personalaccounting.domain.objectvalues.EntryBudgetType.INCOME;
+import static com.joseatorralba.ddd.personalaccounting.domain.objectvalues.EntryType.EXPENSE;
+import static com.joseatorralba.ddd.personalaccounting.domain.objectvalues.EntryType.INCOME;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
